@@ -64,12 +64,17 @@ class App extends React.Component {
         </div>
         <div className= "buttons">
         {this.state.previous &&(
-            <button className= "active" onClick={()=>this.fetchPage(this.state.previous)}>Página previa</button>
+            <button className= "active btn-pokemon" onClick={()=>this.fetchPage(this.state.previous)}>Página previa</button>
+        )}
+        {!this.state.previous &&(
+            <button className= "inactive btn-pokemon" >Página previa</button>
         )}
         {this.state.next &&(
-          <button className= "active" onClick={()=>this.fetchPage(this.state.next)}>Siguientes 20 Pokémon</button>
+          <button className= "active btn-pokemon" onClick={()=>this.fetchPage(this.state.next)}>Siguientes 20 Pokémon</button>
         )}
-          
+        {!this.state.next &&(
+          <button className= "inactive btn-pokemon" >Siguientes 20 Pokémon</button>
+        )}
           
         </div>
       </>
